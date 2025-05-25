@@ -1,0 +1,267 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fc;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* Left - Logo */
+.nav-left .logo {
+  width: 70px;
+  height: 70px;
+}
+
+/* Center - Site Title */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Right - Nav Items */
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: max-height 0.3s ease;
+}
+
+.nav-right li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-right li a:hover {
+  text-decoration: underline;
+}
+
+/* Join Button */
+.join-btn {
+  background-color: #ff9900;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Ad Section */
+.ad-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.ad-banner {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Recent Resources Section */
+.recent-resources {
+  padding: 30px;
+  text-align: center;
+}
+
+.recent-resources h2 {
+  margin-bottom: 20px;
+  color: #004080;
+}
+
+.resource-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.resource-card {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.resource-card h3 {
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+.resource-card p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.resource-card a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav-right by default */
+  .nav-right {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #004080;
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 0 0 0 10px;
+  }
+
+  /* Show nav-right when active */
+  .nav-right.active {
+    max-height: 500px; /* enough to show menu */
+  }
+
+  /* Center title stays centered */
+  .nav-center {
+    position: static;
+    transform: none;
+  }
+
+  /* Nav items style */
+  .nav-right li {
+    border-bottom: 1px solid #05509e;
+  }
+
+  .nav-right li a {
+    padding: 15px;
+    display: block;
+  }
+
+  /* Dropdown menu positioning & style for mobile */
+  .dropdown .dropdown-menu {
+    position: static;
+    border: none;
+    background-color: #036;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .dropdown .dropdown-menu.active {
+    max-height: 500px;
+  }
+
+  .dropdown-menu li a {
+    color: #ddd;
+    padding-left: 30px;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #024d82;
+  }
+}
+
+@media (max-width: 400px) {
+  .resource-card {
+    width: 90vw;
+  }
+}
