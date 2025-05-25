@@ -2,112 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduTorch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teaching Torch - Learn Smart</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body style="margin: 0; font-family: sans-serif;">
-
-  <!-- Header (Sticky at Top) -->
-  <header style="
-    background-color: black;
-    color: white;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  ">
-    <!-- Logo -->
-    <img src="/images/logo.png" alt="EduTorch Logo" style="height: 40px; width: auto;" />
-
-    <!-- Centered Title -->
-    <h1 style="position: absolute; left: 50%; transform: translateX(-50%); margin: 0;">Welcome to EduTorch</h1>
-
-    <!-- Right: Hamburger + Nav -->
-    <div style="display: flex; flex-direction: column; align-items: flex-end;">
-      <!-- Hamburger Button -->
-      <div style="position: relative;">
-        <button onclick="toggleHamburgerMenu()" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">
-          &#9776;
-        </button>
-        <ul id="hamburgerMenu" style="display: none; position: absolute; right: 0; background: #222; list-style: none; margin: 10px 0 0; padding: 10px; border-radius: 4px;">
-          <li><a href="#" style="color: white; text-decoration: none; display: block; padding: 5px 0;">About Us</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; display: block; padding: 5px 0;">Advertise With Us</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; display: block; padding: 5px 0;">Social Media</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; display: block; padding: 5px 0;">WhatsApp Us</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; display: block; padding: 5px 0;">Privacy Policy</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; display: block; padding: 5px 0;">Contact Us</a></li>
-        </ul>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="images/logo.png" alt="Teaching Torch Logo" class="logo" />
       </div>
 
-      <!-- Nav Bar Under Hamburger -->
-      <nav style="margin-top: 10px;">
-        <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 15px;">
-          <li><a href="/" style="color: white; text-decoration: none;">Home</a></li>
-          <li><a href="/about" style="color: white; text-decoration: none;">About</a></li>
-          <li><a href="/blog" style="color: white; text-decoration: none;">Blog</a></li>
-          <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+      <div class="nav-center">
+        <h1 class="site-title">Teaching Torch</h1>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-right">
+        <li><a href="#">Home</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Subjects ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#grade6">Grade 6</a></li>
+            <li><a href="#grade7">Grade 7</a></li>
+            <li><a href="#grade8">Grade 8</a></li>
+            <li><a href="#grade9">Grade 9</a></li>
+            <li><a href="#grade10">Grade 10</a></li>
+            <li><a href="#grade11">Grade 11</a></li>
+            <li><a href="#advanced">Advanced Level</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="login.html" class="join-btn">Join</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main style="
-    padding-top: 140px; /* So content doesn't hide behind fixed header */
-    background-image: url('/images/background.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    padding: 40px;
-    color: white;
-  ">
-    <!-- Grades Section -->
-    <section class="grades" style="margin-bottom: 40px;">
-      <h2 style="color: white;">Grades</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 15px;">
-        <!-- Grades 1 to 11 -->
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 1</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 2</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 3</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 4</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 5</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 6</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 7</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 8</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 9</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 10</a>
-        <a href="#" style="padding: 10px 15px; background-color: #007fa0; color: white; text-decoration: none; border-radius: 5px;">Grade 11</a>
+  <!-- Ad Section -->
+  <section class="ad-section">
+    <a href="https://example.com" target="_blank" rel="noopener">
+      <img
+        src="images/ad-placeholder.jpg"
+        alt="Ad"
+        class="ad-banner"
+      />
+    </a>
+  </section>
+
+  <!-- Recent Resources Section -->
+  <section class="recent-resources">
+    <h2>Recently Added Resources</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Grade 6 - Science Paper</h3>
+        <p>Download the latest Science paper and marking scheme.</p>
+        <a href="#">Download</a>
       </div>
-    </section>
+      <div class="resource-card">
+        <h3>Grade 10 - Mathematics Paper</h3>
+        <p>Practice questions with solutions included.</p>
+        <a href="#">Download</a>
+      </div>
+      <div class="resource-card">
+        <h3>A/L ICT Notes</h3>
+        <p>Well-organized theory and practical notes.</p>
+        <a href="#">View</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Blog Section -->
-    <section class="blog-list">
-      <article class="post">
-        <h2><a href="/blog/sample-post" style="color: white;">Sample Blog Post Title</a></h2>
-        <p class="post-date">Posted on May 17, 2025</p>
-        <p>This is a sample blog post description. Click to read more...</p>
-      </article>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer style="background-color: #f1f1f1; text-align: center; padding: 10px 0;">
-    <p>&copy; 2025 EduTorch. All rights reserved.</p>
-  </footer>
-
-  <!-- JS -->
   <script>
-    function toggleHamburgerMenu() {
-      const menu = document.getElementById('hamburgerMenu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
+    // Toggle mobile menu
+    const hamburger = document.querySelector(".hamburger");
+    const navRight = document.querySelector(".nav-right");
+    const dropdown = document.querySelector(".dropdown");
+    const dropbtn = dropdown.querySelector(".dropbtn");
+    const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+
+    hamburger.addEventListener("click", () => {
+      const expanded = hamburger.getAttribute("aria-expanded") === "true" || false;
+      hamburger.setAttribute("aria-expanded", !expanded);
+      hamburger.classList.toggle("active");
+      navRight.classList.toggle("active");
+    });
+
+    // Toggle dropdown on click (for mobile)
+    dropbtn.addEventListener("click", (e) => {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("active");
+      }
+    });
+
+    // Close dropdown if clicking outside (mobile)
+    document.addEventListener("click", (e) => {
+      if (
+        window.innerWidth < 768 &&
+        !dropdown.contains(e.target)
+      ) {
+        dropdownMenu.classList.remove("active");
+      }
+    });
   </script>
 </body>
 </html>
