@@ -8,6 +8,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f8f9fc;
+  color: #333;
 }
 
 /* Navbar Styles */
@@ -21,13 +22,11 @@ body {
   position: relative;
 }
 
-/* Left - Logo */
 .nav-left .logo {
   width: 70px;
   height: 70px;
 }
 
-/* Center - Site Title */
 .nav-center {
   position: absolute;
   left: 50%;
@@ -40,7 +39,6 @@ body {
   color: white;
 }
 
-/* Right - Nav Items */
 .nav-right {
   list-style: none;
   display: flex;
@@ -59,7 +57,6 @@ body {
   text-decoration: underline;
 }
 
-/* Join Button */
 .join-btn {
   background-color: #ff9900;
   padding: 8px 12px;
@@ -67,7 +64,6 @@ body {
   font-weight: bold;
 }
 
-/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -131,9 +127,11 @@ body {
 .hamburger.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -194,15 +192,12 @@ body {
   font-weight: bold;
 }
 
-/* MOBILE RESPONSIVE */
-
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  /* Show hamburger */
   .hamburger {
     display: flex;
   }
 
-  /* Hide nav-right by default */
   .nav-right {
     position: absolute;
     top: 60px;
@@ -215,18 +210,15 @@ body {
     border-radius: 0 0 0 10px;
   }
 
-  /* Show nav-right when active */
   .nav-right.active {
-    max-height: 500px; /* enough to show menu */
+    max-height: 500px;
   }
 
-  /* Center title stays centered */
   .nav-center {
     position: static;
     transform: none;
   }
 
-  /* Nav items style */
   .nav-right li {
     border-bottom: 1px solid #05509e;
   }
@@ -236,7 +228,6 @@ body {
     display: block;
   }
 
-  /* Dropdown menu positioning & style for mobile */
   .dropdown .dropdown-menu {
     position: static;
     border: none;
@@ -263,5 +254,6 @@ body {
 @media (max-width: 400px) {
   .resource-card {
     width: 90vw;
+    margin: 10px 0; /* Add margin between cards */
   }
 }
