@@ -37,6 +37,12 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #3498db;
+  outline: none;
 }
 
 button {
@@ -64,4 +70,26 @@ button:hover {
   color: #3498db;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* Focus state for form elements */
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 2em 1.5em;
+    width: 90%;
+  }
+}
+
+/* Error message styling (Optional for form validation) */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 1em;
 }
