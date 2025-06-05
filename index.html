@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teaching Torch - Learn Smart</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduTorch - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="nav-left">
-        <img src="images/logo.png" alt="Teaching Torch Logo" class="logo" />
-      </div>
 
-      <div class="nav-center">
-        <h1 class="site-title">Teaching Torch</h1>
-      </div>
-
-      <!-- Hamburger -->
-      <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <ul class="nav-right">
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="nav-center">
+      <h1 class="site-title">EduTorch</h1>
+    </div>
+    <div class="nav-right" id="navLinks">
+      <ul>
         <li><a href="#">Home</a></li>
-
         <li class="dropdown">
           <a href="#" class="dropbtn">Subjects ▾</a>
           <ul class="dropdown-menu">
@@ -39,22 +32,22 @@
             <li><a href="#advanced">Advanced Level</a></li>
           </ul>
         </li>
-
         <li><a href="#">Resources</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="login.html" class="join-btn">Join</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+    <button class="hamburger" aria-expanded="false" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
 
   <!-- Ad Section -->
   <section class="ad-section">
     <a href="https://example.com" target="_blank" rel="noopener">
-      <img
-        src="images/ad-placeholder.jpg"
-        alt="Ad"
-        class="ad-banner"
-      />
+      <img src="images/ad-placeholder.jpg" alt="Ad" class="ad-banner">
     </a>
   </section>
 
@@ -80,38 +73,5 @@
     </div>
   </section>
 
-  <script>
-    // Toggle mobile menu
-    const hamburger = document.querySelector(".hamburger");
-    const navRight = document.querySelector(".nav-right");
-    const dropdown = document.querySelector(".dropdown");
-    const dropbtn = dropdown.querySelector(".dropbtn");
-    const dropdownMenu = dropdown.querySelector(".dropdown-menu");
-
-    hamburger.addEventListener("click", () => {
-      const expanded = hamburger.getAttribute("aria-expanded") === "true" || false;
-      hamburger.setAttribute("aria-expanded", !expanded);
-      hamburger.classList.toggle("active");
-      navRight.classList.toggle("active");
-    });
-
-    // Toggle dropdown on click (for mobile)
-    dropbtn.addEventListener("click", (e) => {
-      if (window.innerWidth < 768) {
-        e.preventDefault();
-        dropdownMenu.classList.toggle("active");
-      }
-    });
-
-    // Close dropdown if clicking outside (mobile)
-    document.addEventListener("click", (e) => {
-      if (
-        window.innerWidth < 768 &&
-        !dropdown.contains(e.target)
-      ) {
-        dropdownMenu.classList.remove("active");
-      }
-    });
-  </script>
 </body>
 </html>
